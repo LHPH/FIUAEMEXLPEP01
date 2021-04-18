@@ -1,0 +1,29 @@
+#ifndef LISTASIMPLEE_H_INCLUDED
+#define LISTASIMPLEE_H_INCLUDED
+
+//Aqui se define el elemento de la lista
+    typedef struct ElementoLista
+    {
+        char      dato [50];
+		struct ElementoLista *siguiente;   //Apuntador al siguiente nodo (Elementolista)
+    }Elemento;  //alias para la estructura
+
+/*Aquí­ se tendra el control de la lista donde:
+  El puntero inicio contendrá la dirección del primer elemento de la lista.
+  El puntero fin contendrá la dirección del último elemento de la lista.
+  La variable tam contiene el número de elementos.*/
+    typedef struct ListaIdentificar
+    {
+		Elemento *inicio;   //nodo inicial
+		Elemento *fin;      //nodo final
+		int tam;            //tamaño de la lista actual total de nodos
+		/*int (*inserVacia)(struct ListaIdentificar *,int);
+		int (*inserInicio)(struct ListaIdentificar *,int);
+		int (*inserFinal)(struct ListaIdentificar *,int);
+		int (*inserPos)(struct ListaIdentificar *,int);*/
+		int (*elimInicio)(struct ListaIdentificar *);
+		int (*elimPos)(struct ListaIdentificar *,int);
+    }Lista;    //alias para la estructura
+
+
+#endif // LISTASIMPLEE_H_INCLUDED
